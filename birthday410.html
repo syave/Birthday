@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday Alemla💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ffe6f0, #e6f7ff);
+            text-align: center;
+            padding: 40px 20px;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #d63384;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            max-width: 90%;
+            margin: 15px auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .button {
+            background: #ff6699;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #ff3366;
+            transform: scale(1.05);
+        }
+
+        /* Flower animation */
+        .flower {
+            position: absolute;
+            font-size: 1.8em;
+            animation: fall 6s linear infinite;
+            top: -50px;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 350px;
+            margin: 15px auto;
+            display: block;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+<h1>💌 A Special Surprise 💌</h1>
+<button class="button" onclick="openCard()">Open your card 🎁</button>
+
+<div id="card" class="hidden">
+    <h1>Happy Birthday, [Her Name]! 🎉</h1>
+    <p>
+        You are one of the most amazing people in my life.
+        Every time you smile, it brightens up my world.
+        Today, I just want to wish you endless happiness, love, and dreams come true. 💖
+    </p>
+    <p>
+        I’m so lucky to know you, and I hope this year is your best one yet ✨
+    </p>
+
+    <!-- Example song -->
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<script>
+    function openCard() {
+        document.getElementById("card").classList.remove("hidden");
+
+        // Generate falling flowers
+        for (let i = 0; i < 20; i++) {
+            let flower = document.createElement("div");
+            flower.classList.add("flower");
+            flower.innerHTML = "🌸";
+            flower.style.left = Math.random() * window.innerWidth + "px";
+            flower.style.animationDuration = (3 + Math.random() * 3) + "s";
+            document.body.appendChild(flower);
+
+            // Remove flowers after animation
+            setTimeout(() => { flower.remove(); }, 6000);
+        }
+    }
+</script>
+</body>
+</html>
