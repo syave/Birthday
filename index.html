@@ -1,123 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Happy Birthday Alemla💖</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #e6ccff, #c8a2c8);
-            text-align: center;
-            padding: 40px 20px;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        h1 {
-            font-size: 2em;
-            color: #d63384;
-        }
-
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            max-width: 90%;
-            margin: 15px auto;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .button {
-            background: #ff6699;
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 30px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: #ff3366;
-            transform: scale(1.05);
-        }
-
-        /* Flower animation */
-        .flower {
-            position: absolute;
-            font-size: 1.8em;
-            animation: fall 6s linear infinite;
-            top: -50px;
-            pointer-events: none;
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-        }
-
-        iframe {
-            width: 100%;
-            max-width: 350px;
-            margin: 15px auto;
-            display: block;
-            border-radius: 12px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#fff4e8">
+    <title>A gift only for Alemla 🌸</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>💌 A Special Surprise 💌</h1>
-<button class="button" onclick="openCard()">Open me 🎁</button>
+<main class="scene">
+    <div class="background-glow"></div>
+    <div id="petals" class="petals" aria-hidden="true"></div>
 
-<div id="card" class="hidden">
-    <h1>Happy Birthday Alemla! 🎉</h1>
-    <p>
-        I wish you a happy birthday!!!
-    </p>
-    <p>
-        On this day I want to tell you how amazing you are...
-    </p>
-    <p>
-        You are an incredible person ,a great teacher, too funny ,too kind, too lovely and I hope that you are always like that.
-        Never change, not even for the people you care, the way you are is perfect.
-    </p>
-    <p>
-        There may be changes in your life from now on or maybe the changes already appeared...
-        But don't worry too much cause this is life and put struggles in our roads, but I know you'll be able to pass through it,
-        And if you're worried you will always have me by your side, so don't think twice if there's a problem because I'll be there for you💖
-    </p>
-    <p>
-        I’m so lucky to know you, and I hope you spend it amazing ✨
-        Hope your day is amazing and lovely ✨
-    </p>
+    <section id="intro" class="intro">
+        <div class="cake-container">
+            <div class="wish-hint" id="wishHint">Make a wish and click the candle to blow it out! 🎂✨</div>
+            <div class="cake">
+                <div class="plate"></div>
+                <div class="layer layer-bottom"></div>
+                <div class="layer layer-middle"></div>
+                <div class="layer layer-top"></div>
+                <div class="icing"></div>
+                <div class="drips">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <button class="candle" id="candle" aria-label="Blow out the candle">
+                    <div class="flame lit" id="flame"></div>
+                </button>
+            </div>
+        </div>
 
-    <a href="https://youtu.be/3GOYaIIeT28" target="_blank">
-        🎶 Some song dedicated to you💖
-    </a>
-    <div class="ramo" style="top: -30px; left: 10px;">🌹</div>
-    <div class="ramo" style="top: -30px; right: 10px;">🌷</div>
-    <div class="ramo" style="bottom: -30px; left: 10px;">💐</div>
-    <div class="ramo" style="bottom: -30px; right: 10px;">🌺</div>
-</div>
+        <p class="eyebrow">I have something for you...</p>
+        <h1>Just a small gift 🌷</h1>
+        <p class="hint">Open me </p>
+        <p id="lockWarning" class="lock-warning" aria-live="polite"></p>
+        <button id="gift" class="gift" aria-label="Open the gift">
+            <span class="gift-shadow"></span>
+            <span class="gift-box">
+              <span class="box-body"></span>
+              <span class="box-lid"></span>
+              <span class="ribbon-v"></span>
+              <span class="ribbon-h"></span>
+              <span class="bow bow-left"></span>
+              <span class="bow bow-right"></span>
+            </span>
+        </button>
+    </section>
 
-<script>
-    function openCard() {
-        document.getElementById("card").classList.remove("hidden");
+    <section id="surprise" class="surprise" aria-hidden="true">
+        <div class="flower-burst" id="flowerBurst"></div>
 
-        // Generate falling flowers
-        for (let i = 0; i < 20; i++) {
-            let flower = document.createElement("div");
-            flower.classList.add("flower");
-            flower.innerHTML = "🌸";
-            flower.style.left = Math.random() * window.innerWidth + "px";
-            flower.style.animationDuration = (3 + Math.random() * 3) + "s";
-            document.body.appendChild(flower);
-        }
-    }
-</script>
+        <div class="message">
+            <p class="small-title">For you, in such special day</p>
+            <h2>¡Happy Birthday Alemla! 💐</h2>
+            <p class="subtitle">Because such amazing teacher deserves the best flowers</p>
+
+            <div class="bouquet" aria-hidden="true">
+                <img src="images3-removebg-preview.png" class="real-flower" alt="Flores reales">
+                <img src="images3-removebg-preview.png" class="real-flower flower-intro" alt="Flores reales2">
+            </div>
+            <div class="letter-wrapper">
+                <img src="images-removebg-preview.png" class="real-flower flower-top-left" alt="Flores reales">
+                <img src="images1-removebg-preview.png" class="real-flower flower-bottom-right" alt="Flores reales">
+                <img src="fr117-ramo-flores-estacion-removebg-preview.png" class="real-flower flower-bottom-left" alt="Flores Reales">
+                <img src="images2-removebg-preview.png" class="real-flower flower-top-right" alt="Flores reales">
+                <article class="letter">
+                    <div class="letter-top">💌</div>
+                    <h3>Dear Alemla</h3>
+                    <p>
+                        I wanted to give you something different, something you can
+                        open it with your fingers and make you smile.
+                    </p>
+                    <p>
+                        So I prepared this little place full of flowers.
+                        I could not choose one(sorry hehe) because you deserve the best
+                        and the best flowers.
+                        But there is something more beautiful than a flower and that
+                        is YOU 🌸
+                    </p>
+                    <p>
+                        This special day marks another day in your life and even if today will
+                        be the same as other days, for me, it is not just another day.
+                        For me this day is important because you exist 😊
+                    </p>
+                    <p>
+                        You are such amazing teacher, such amazing person and even if I do not
+                        appreciate it enough, you take care of me and for that I want to thank you😊
+                        Hope you do not change and that you enjoy this birthday and the next ones too,
+                        and hopefully one day we both can enjoy your birthday together 😇
+                    </p>
+                    <p>
+                        Hope you have an amazing birthday and that you can enjoy it, smile,
+                        laugh and that you can rest too hehe , after all you deserve it after such long day😊
+                    </p>
+                    <p class="signature">Sending you love and care ❤️</p>
+                </article>
+            </div>
+
+            <div class="extras">
+                <img src="images4-removebg-preview.png" class="real-flower flower-intro" alt="Flores reales">
+                <span>🍫 Eat a lot</span>
+                <span>😴 Do not forget to rest too</span>
+                <span>🌸 You deserve this flower and more</span>
+                <img src="images4-removebg-preview.png" class="real-flower flower-intro1" alt="Flores reales">
+            </div>
+            <button id="again" class="again">Open gift again 🌷</button>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
